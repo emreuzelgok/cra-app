@@ -36,6 +36,7 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    '@typescript-eslint/no-unused-vars': 'error',
     'prettier/prettier': 'error',
   },
 };
