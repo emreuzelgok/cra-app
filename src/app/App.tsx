@@ -1,3 +1,4 @@
+import { hot } from 'react-hot-loader/root';
 import './App.scss';
 
 const App = () => {
@@ -20,4 +21,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default hot(App);

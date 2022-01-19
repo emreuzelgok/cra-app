@@ -36,6 +36,18 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: [
+          '.storybook/**/*.js',
+          'config-overrides.js',
+          'src/setupTests.ts',
+          'src/components/**/*.stories.tsx',
+          'src/**/*.test.{ts,tsx}',
+        ],
+      },
+    ],
     '@typescript-eslint/no-unused-vars': 'error',
     'prettier/prettier': 'error',
   },

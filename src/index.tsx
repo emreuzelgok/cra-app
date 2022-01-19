@@ -1,9 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
+import { setConfig } from 'react-hot-loader';
 import App from './app';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+
+setConfig({
+  ignoreSFC: true,
+  pureRender: true,
+});
 
 ReactDOM.render(
   <React.StrictMode>
