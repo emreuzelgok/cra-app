@@ -1,25 +1,33 @@
 import { FC } from 'react';
+import cx from 'classnames';
 import './Button.scss';
 
-type Props = {
+type Props = JSX.IntrinsicElements['button'] & {
   primary?: boolean;
+  secondary?: boolean;
   backgroundColor?: string;
   size?: 'sm' | 'md' | 'lg';
-  label: string;
+  label?: string;
   onClick?: () => void;
 };
 
-const Button: FC<Props> = ({ primary = false, size = 'md', backgroundColor, label, ...props }) => {
-  const mode = primary ? 'button--primary' : 'button--secondary';
+const Button: FC<Props> = ({
+  primary,
+  secondary,
+  size = 'md',
+  backgroundColor,
+  label,
+  children,
+  onClick,
+}) => {
+  // const mode = primary ? 'button--primary' : 'button--secondary';
+  const classNames = cx('button', `button--${size}`, {
+    'button--primary': primary,
+    'button--secondary': secondary,
+  });
   return (
-    <button
-      type="button"
-      className={['button', `button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      {...props}
-    >
-      {label}
+    <button className={classNames} style={{ backgroundColor }} onClick={onClick}>
+      {label || children}
     </button>
   );
 };
