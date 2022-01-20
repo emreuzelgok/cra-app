@@ -1,8 +1,7 @@
-import { render, screen } from '../utils/test';
+import { render, screen, waitFor } from '../utils/test';
 import App from '.';
 
-test('renders learn react link', () => {
+test('renders learn react link', async () => {
   render(<App />);
-  const heading = screen.getByRole('heading');
-  expect(heading).toHaveTextContent(/home page/i);
+  await waitFor(() => expect(screen.getByRole('heading')).toHaveTextContent(/home page/i));
 });
