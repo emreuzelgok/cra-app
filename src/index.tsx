@@ -1,5 +1,5 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import './index.scss';
 import { setConfig } from 'react-hot-loader';
 import App from './app';
@@ -12,9 +12,9 @@ setConfig({
 });
 
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <App />
-  </React.StrictMode>,
+  </BrowserRouter>,
   document.getElementById('root'),
 );
 
