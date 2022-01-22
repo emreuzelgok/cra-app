@@ -34,10 +34,10 @@
     "workbox-streams": "^5.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject",
     "lint": "yarn run lint:ts",
     "lint:ts": "tsc && yarn lint:eslint",
     "lint:eslint": "eslint 'src/**/*.{ts,tsx}'",
@@ -47,7 +47,7 @@
     "format:check": "prettier -c 'src/**/*.{ts,tsx}'",
     "format": "yarn run format:ts && yarn run format:css",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build:storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": [
